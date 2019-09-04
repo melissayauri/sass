@@ -1,2 +1,48 @@
+/**importaciones con condicionales*/
+.primary {
+  background: blue; }
+
+.primarys {
+  background: #00ffb3; }
+
 body {
   display: block; }
+
+/*placeholders- solo para estilos generales*/
+/*se utiliza extend y la propiedad es con %*/
+.button, .button-alert {
+  display: inline-block;
+  margin: 1em 0;
+  padding: .5em 1.5em; }
+
+.button span, .text span, .text-alert span {
+  color: black; }
+
+.button-alert {
+  color: red; }
+
+/*extende con clase*/
+.text, .text-alert {
+  text-align: center;
+  font-weight: bold; }
+
+.text-alert {
+  color: red; }
+
+.button:hover, .button.active {
+  transform: translateY(-8px); }
+
+/*********Condicionales********/
+* {
+  outline: 1px solid red; }
+
+a {
+  display: none; }
+
+/*and*/
+p {
+  display: none; }
+
+/*or*/
+span {
+  display: none; }

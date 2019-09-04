@@ -1,0 +1,1 @@
+* se debe de utilizar extend solo para selectores generales, no utilizar cuando hay hijos en los selectores.
