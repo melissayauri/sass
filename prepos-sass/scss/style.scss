@@ -1,0 +1,132 @@
+/*import*/
+@import "config";
+@import "menu";
+.caja{
+    background-color: orange;
+}
+/******variables******/
+$color:purple;
+$size: 200px;
+/*deafult sobre escribe variables*/
+$primary-color: blue;
+$primary-color: orange !default;
+
+body{
+    background: yellow;
+    color:$color;
+    padding-top: $size*2;
+    font-size: 30px;
+    text-align: center;
+}
+
+p{
+    color:$primary-color;
+    $size:20px;
+    /*se necesita interpolación de variables*/
+    /* calc solo acepta valores*/
+    width: calc(100% - #{$size});
+}
+/*interpolación de variables*/
+.#{$color}{
+    color:$color;
+}
+/******anidamiento*****/
+ul{
+    margin: 0;
+    animation: menu 1s;
+    /*referencia al elemento padre, solo para selectores*/
+    &:hover{
+        color:green;
+    }
+    &::before{
+        content: 'meliss'
+    }
+    /**/
+    & li{
+        color:red;
+    }
+    /*buena práctica*/
+    li{
+        margin: 0;
+    }
+
+    @media screen and(min-width: 640px){
+        display: flex;
+    }
+
+    @keyframes menu {
+        to{
+            color:red;
+        }
+        
+    }
+}
+/*anidamiento de clase*/
+.menu{
+    display: block;
+    &-item{
+        color:red;
+    }
+    /*anidamiento de propiedades*/
+    grid-template: {
+        columns: 100px 100px;
+        rows: auto;
+    }
+}
+
+/*tipo de datos*/
+/*stringd, numneros, colores, booleans, maps, lists*/
+/*string*/
+/*puede ser entrecomillados o no*/
+$var: hola;
+$example: quote(sjdjd);
+$example2: unquote("hi meli");
+div{
+    background: url(imagen.jpg)
+}
+.div{
+    background: type-of($var);
+    /*excepto esta propiedad*/
+    content: $var;
+    text-decoration: $example2;
+    background-color: $example;
+}
+/*Números-colores*/
+$number: 40px;
+$colorv: white;
+$color-dark: darken(red, 20);
+.example{
+    margin: $number*2;
+    background-color: type-of($colorv);
+    background-color: $colorv;
+    color: $color-dark;
+}
+/*boolean*/
+/*listas, se pueden recorrer
+aquellos que son separados espacios
+o comas
+*/
+$list: 1px solid red;
+.lista{
+    background: type-of($list);
+}
+
+/*map. sintaxis tipo obj*/
+$map:(
+    color:red,
+    font:arial,
+    size:20px
+
+);
+
+$colores:(
+    primary:red,
+    secondary: blue,
+    third:orange
+);
+
+.map{
+    background: type-of($map);
+    color: map-get($map, font );
+    background-color: map-get($colores, primary )
+}

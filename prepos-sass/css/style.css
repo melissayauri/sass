@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/*import*/
+.menu {
+  color: red;
+  background: 0%;
+  text-align: center; }
+
+.caja {
+  background-color: orange; }
+
+/******variables******/
+/*deafult sobre escribe variables*/
+body {
+  background: yellow;
+  color: purple;
+  padding-top: 400px;
+  font-size: 30px;
+  text-align: center; }
+
+p {
+  color: blue;
+  /*se necesita interpolación de variables*/
+  /* calc solo acepta valores*/
+  width: calc(100% - 20px); }
+
+/*interpolación de variables*/
+.purple {
+  color: purple; }
+
+/******anidamiento*****/
+ul {
+  margin: 0;
+  animation: menu 1s;
+  /*referencia al elemento padre, solo para selectores*/
+  /**/
+  /*buena práctica*/ }
+  ul:hover {
+    color: green; }
+  ul::before {
+    content: 'meliss'; }
+  ul li {
+    color: red; }
+  ul li {
+    margin: 0; }
+  @media screen and (min-width: 640px) {
+    ul {
+      display: flex; } }
+
+@keyframes menu {
+  to {
+    color: red; } }
+
+/*anidamiento de clase*/
+.menu {
+  display: block;
+  /*anidamiento de propiedades*/
+  grid-template-columns: 100px 100px;
+  grid-template-rows: auto; }
+  .menu-item {
+    color: red; }
+
+/*tipo de datos*/
+/*stringd, numneros, colores, booleans, maps, lists*/
+/*string*/
+/*puede ser entrecomillados o no*/
+div {
+  background: url(imagen.jpg); }
+
+.div {
+  background: string;
+  /*excepto esta propiedad*/
+  content: hola;
+  text-decoration: hi meli;
+  background-color: "sjdjd"; }
+
+/*Números-colores*/
+.example {
+  margin: 80px;
+  background-color: color;
+  background-color: white;
+  color: #990000; }
+
+/*boolean*/
+/*listas, se pueden recorrer
+aquellos que son separados espacios
+o comas
+*/
+.lista {
+  background: list; }
+
+/*map. sintaxis tipo obj*/
+.map {
+  background: map;
+  color: arial;
+  background-color: red; }
