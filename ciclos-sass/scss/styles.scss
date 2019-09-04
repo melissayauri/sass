@@ -19,3 +19,22 @@
     }
 }
 }
+/*****each con listas****/
+$colors-each: red green blue;
+
+@each $color in $colors-each{
+    .button-#{$color}{
+        background: $color;
+    }
+}
+/*each con mapas*/
+$colors-map:(
+    primary:yellow,
+    secondary: blue,
+    third: orange
+);
+@each $key , $value in $colors-map{
+.button-#{$key}{
+    background: $value;
+}
+}

@@ -119,3 +119,23 @@
 
 .column-100 {
   width: 100%; }
+
+/*****each con listas****/
+.button-red {
+  background: red; }
+
+.button-green {
+  background: green; }
+
+.button-blue {
+  background: blue; }
+
+/*each con mapas*/
+.button-primary {
+  background: yellow; }
+
+.button-secondary {
+  background: blue; }
+
+.button-third {
+  background: orange; }
