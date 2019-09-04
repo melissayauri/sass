@@ -1,0 +1,21 @@
+@for $i from 1 through 10{
+    .column-#{$i}{
+        width: $i * 1%;
+    }
+}
+/**/
+
+@for $i from 1 through 20{
+    .column-#{$i * 5}{
+        width: $i * 5%;
+    }
+}
+/**********solo pares***********/
+
+@for $i from 1 through 20{
+    @if $i % 2 == 0{
+    .column-#{$i * 5}{
+        width: $i * 5%;
+    }
+}
+}
