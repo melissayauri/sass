@@ -1,0 +1,41 @@
+
+$colors: hsl(0, 100, 50);
+@for $i from 0 through 360{
+.div{
+    //1background: hsl($i, 100, 50);
+    $colors: append($colors, hsl($i, 100, 50), comma);
+}
+}
+.div{
+    //1background: linear-gradient(yellow, red);
+    background: linear-gradient($colors);
+    min-height: 100vh
+}
+/****escala de grises***/
+$colors-scale: hsl(0, 0, 0);
+@for $i from 0 through 100{
+.div-scale{
+    //1background: hsl($i, 100, 50);
+    $colors-scale: append($colors-scale, hsl(0, 0, $i), comma);
+}
+}
+.div-scale{
+    //1background: linear-gradient(yellow, red);
+    background: linear-gradient($colors-scale);
+    min-height: 100vh
+}
+
+/******saturación*******/
+$colors-saturate: hsl(0, 0, 0);
+@for $i from 0 through 100{
+.saturate{
+    //1background: hsl($i, 100, 50);
+    $colors-saturate: append($colors-saturate, hsl(0, $i, 50), comma);
+}
+}
+.saturate{
+    //1background: linear-gradient(yellow, red);
+    background: linear-gradient(to top, $colors-saturate);
+    min-height: 100vh
+}
+
